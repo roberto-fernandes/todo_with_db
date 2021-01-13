@@ -115,20 +115,14 @@ class _TodoScreenState extends State<TodoScreen> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text('Enter your to-do'),
-            content: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    autofocus: true,
-                    controller: TextEditingController()..text = todoTitle,
-                    decoration: InputDecoration(
-                        labelText: 'To-do: ', hintText: 'Eg. buy milk'),
-                    onChanged: (value) {
-                      todoTitle = value;
-                    },
-                  ),
-                ),
-              ],
+            content: TextField(
+              autofocus: true,
+              controller: TextEditingController()..text = todoTitle,
+              decoration: InputDecoration(
+                  labelText: 'To-do: ', hintText: 'Eg. buy milk'),
+              onChanged: (value) {
+                todoTitle = value;
+              },
             ),
             actions: [
               FlatButton(
